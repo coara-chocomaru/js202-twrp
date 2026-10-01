@@ -131,7 +131,9 @@ TW_INCLUDE_CRYPTO := true
 # TW_USE_FSCRYPT_POLICY := 1
 TW_INCLUDE_FUSE_EXFAT := true
 PB_OFFICIAL := true
-TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
+
+TARGET_CRYPTFS_HW_PATH := $(DEVICE_PATH/cryptfs_hw
+
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
