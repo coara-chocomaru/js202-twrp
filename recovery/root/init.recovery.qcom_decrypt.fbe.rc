@@ -50,6 +50,14 @@ service keystore_auth /sbin/keystore_auth
     disabled
     seclabel u:r:recovery:s0
 
+service qseecomd /sbin/qseecomd
+    user root
+    group root
+    setenv LD_LIBRARY_PATH /vendor/lib64:/sbin
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 # keystore is started and stopped on demand by TWRP
 service keystore /sbin/keystore /tmp/misc/keystore
     user root
