@@ -1,18 +1,6 @@
 on init
     start servicemanager
 
-on fs
-    chmod 0660 /dev/qseecom
-    chown system drmrpc /dev/qseecom
-    chmod 0664 /dev/ion
-    chown system system /dev/ion
-
-on property:ro.crypto.state=encrypted
-   start qseecomd
-
-on property:ro.crypto.fs_crypto_blkdev=*
-   stop qseecomd
-
 service servicemanager /sbin/servicemanager
     user root
     group root readproc
