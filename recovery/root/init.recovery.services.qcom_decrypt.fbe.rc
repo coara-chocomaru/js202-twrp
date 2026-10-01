@@ -1,1 +1,1 @@
-import /system/etc/init/servicemanager.rc
+import /servicemanager.rc
