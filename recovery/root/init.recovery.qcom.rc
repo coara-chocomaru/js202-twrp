@@ -52,6 +52,7 @@ on init
 
 service sbinqseecomd /sbin/qseecomd
     oneshot
+    setenv LD_LIBRARY_PATH /vendor/lib64:/sbin
     disabled
     user root
     group root
