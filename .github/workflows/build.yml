@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main  # 実行するブランチを指定
-
 env:
   MANIFEST_URL: 'https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni'
   MANIFEST_BRANCH: 'twrp-9.0'
