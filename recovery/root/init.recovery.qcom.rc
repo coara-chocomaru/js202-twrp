@@ -47,8 +47,8 @@ on init
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
-    setprop ro.board.platform msm8937
     setprop sys.usb.configfs 1
+    setprop ro.board.platform msm8937
 
 service sbinqseecomd /sbin/qseecomd
     oneshot
