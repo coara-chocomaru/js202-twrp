@@ -6,6 +6,3 @@ LOCAL_PATH := device/kyocera/js202
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb
-
-PRODUCT_PACKAGES += \
-    libcryptfs_hw
