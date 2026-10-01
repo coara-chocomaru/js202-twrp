@@ -7,13 +7,6 @@
 
 # Inherit from those products. Most specific first.
 
-PRODUCT_PACKAGES += \
-    charger_res_images
-
-# Encryption
-PRODUCT_PACKAGES += \
-    libcryptfs_hw
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
