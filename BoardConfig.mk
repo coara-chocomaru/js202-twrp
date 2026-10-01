@@ -1,7 +1,9 @@
 DEVICE_PATH := device/kyocera/js202
 BOARD_VENDOR := kyocera
 BOARD_DEVICE := js202
-BOARD_ROOT_EXTRA_FOLDERS := mnt,metadata
+BOARD_ROOT_EXTRA_FOLDERS += \
+    metadata \
+    mnt
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_QCOM_HARDWARE := true
 
