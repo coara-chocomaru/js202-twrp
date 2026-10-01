@@ -60,6 +60,9 @@ service sbinqseecomd /sbin/qseecomd
 on property:ro.crypto.state=encrypted
     start sbinqseecomd
 
+on property:ro.crypto.fs_crypto_blkdev=*
+    stop sbinqseecomd
+
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
 
