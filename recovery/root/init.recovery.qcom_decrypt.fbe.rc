@@ -1,5 +1,14 @@
 import /init.recovery.services.qcom_decrypt.fbe.rc
 
+on fs
+    chmod 0660 /dev/qseecom
+    chown system drmrpc /dev/qseecom
+    chmod 0664 /dev/ion
+    chown system system /dev/ion
+
+on property:ro.crypto.fs_crypto_blkdev=*
+   stop qseecomd
+
 on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
 
