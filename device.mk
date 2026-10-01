@@ -9,3 +9,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PACKAGES += \
     charger_res_images
+
+PRODUCT_PACKAGES += \
+    libcryptfs_hw
