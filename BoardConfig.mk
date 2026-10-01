@@ -1,13 +1,14 @@
 DEVICE_PATH := device/kyocera/js202
 BOARD_VENDOR := kyocera
 BOARD_DEVICE := js202
+
 BOARD_ROOT_EXTRA_FOLDERS += \
     metadata \
     mnt/vendor/pstore
+
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_QCOM_HARDWARE := true
 
-#64bit
 TARGET_BUILD_64BIT := true
 TARGET_BOARD_SUFFIX := _64
 TARGET_SUPPORTS_64_BIT_APPS := true
@@ -16,7 +17,6 @@ TARGET_USES_64_BIT_BINDER := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_NO_REBOOT_BOOTLOADER := false
 
-#display
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 800
@@ -24,25 +24,20 @@ TARGET_SCREEN_DENSITY := 160
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_NEW_ION_HEAP := true
 
-
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-
-
 
 TARGET_OTA_ASSERT_DEVICE := SZJ202,js202
 AB_OTA_UPDATER := false
 
-# For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
 
-# Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 := 
+TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := generic
 TARGET_2ND_ARCH := arm
@@ -57,30 +52,28 @@ TARGET_CPU_ABI_LIST_32_BIT := $(TARGET_2ND_CPU_ABI),$(TARGET_2ND_CPU_ABI2)
 TARGET_CPU_ABI_LIST := $(TARGET_CPU_ABI_LIST_64_BIT),$(TARGET_CPU_ABI_LIST_32_BIT)
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-
-# Bootloader
 TARGET_BOARD_PLATFORM := msm8937
 TARGET_BOOTLOADER_BOARD_NAME := MSM8937
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_BOOTLOADER := true
-TARGET_NO_FACTORYIMAGE:=true
+TARGET_NO_FACTORYIMAGE := true
 
-
-# Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 1
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 \
-                       androidboot.console=ttyMSM0 \
-                       androidboot.hardware=qcom \
-                       msm_rtb.filter=0x237 \
-                       ehci-hcd.park=3 \
-                       lpm_levels.sleep_disabled=1 \
-                       androidboot.bootdevice=7824900.sdhci \
-                       earlycon=msm_serial_dm,0x78B0000 \
-                       firmware_class.path=/vendor/firmware_mnt/image \
-                       androidboot.usbconfigfs=true \
-                       loop.max_part=7 \
-                       androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += \
+    console=ttyMSM0,115200,n8 \
+    androidboot.console=ttyMSM0 \
+    androidboot.hardware=qcom \
+    msm_rtb.filter=0x237 \
+    ehci-hcd.park=3 \
+    lpm_levels.sleep_disabled=1 \
+    androidboot.bootdevice=7824900.sdhci \
+    earlycon=msm_serial_dm,0x78B0000 \
+    firmware_class.path=/vendor/firmware_mnt/image \
+    androidboot.usbconfigfs=true \
+    loop.max_part=7 \
+    androidboot.selinux=permissive
+
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -91,18 +84,16 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 
-# Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
+
 ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-BOARD_KERNEL_SEPARATED_DTBO := 
 endif
 
-# Partitions
 TARGET_USES_MKE2FS := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
-BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
+BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -112,43 +103,39 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2709520384
 TARGET_COPY_OUT_VENDOR := vendor
 
-# Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
 
-# Verified Boot
 BOARD_AVB_ENABLE := false
-BOARD_VNDK_VERSION := current
+BOARD_VNDK_VERSION := 28
 BOARD_VNDK_RUNTIME_DISABLE := true
 
-# OS
 PLATFORM_SECURITY_PATCH := 2021-10-01
 VENDOR_SECURITY_PATCH := 2021-10-01
 PLATFORM_VERSION := 9.0.0
 BOARD_OS_VERSION := 9.0.0
+
 RECOVERY_SDCARD_ON_DATA := true
+
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
 TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-
-TW_USE_FSCRYPT_POLICY := 1
-TW_INCLUDE_FUSE_EXFAT := true
-TARGET_CRYPTFS_HW_PATH := $(DEVICE_PATH)/cryptfs_hw
-BOARD_USES_QCOM_FBE_DECRYPTION := true
-
-# Encryption
-TARGET_HW_DISK_ENCRYPTION := true
-
-# Keymaster
-TARGET_PROVIDES_KEYMASTER := true
-# TW_CRYPTO_SYSTEM_VOLD_MOUNT := vendor
 TW_CRYPTO_SYSTEM_VOLD_DEBUG := true
 TW_CRYPTO_SYSTEM_VOLD_DISABLE_TIMEOUT := true
 
-# TWRP Configuration
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+TARGET_PROVIDES_KEYMASTER := true
+
+TW_USE_FSCRYPT_POLICY := 1
+BOARD_USES_QCOM_FBE_DECRYPTION := true
+
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := $(DEVICE_PATH)/cryptfs_hw
+
+TW_INCLUDE_FUSE_EXFAT := true
+
 TW_THEME := landscape_hdpi
 TW_ROTATION := 90
 TW_HWROTATION := 90
@@ -167,4 +154,4 @@ TW_USE_TOOLBOX := false
 TW_EXCLUDE_SUPERSU := true
 TW_EXCLUDE_TWRPAPP := true
 TW_EXCLUDE_PYTHON := true
-TW_DEVICE_VERSION := $(shell date -u +" %F")
+TW_DEVICE_VERSION := $(shell date -u +"%F")
