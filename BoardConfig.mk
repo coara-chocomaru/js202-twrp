@@ -76,7 +76,8 @@ BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 \
                        earlycon=msm_serial_dm,0x78B0000 \
                        firmware_class.path=/vendor/firmware_mnt/image \
                        androidboot.usbconfigfs=true \
-                       loop.max_part=7
+                       loop.max_part=7 \
+                       androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
