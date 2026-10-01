@@ -1,8 +1,0 @@
-[
-  {
-    "remote":"github",
-    "repository": "coara-chocomaru/test-pb",
-    "target_path": "device/qcom/common",
-    "revision":"android-9.0"
-  }
-]
