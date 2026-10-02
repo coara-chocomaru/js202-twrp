@@ -138,7 +138,7 @@ on property:vendor.sys.listeners.registered=true
     start servicemanager
     setprop sys.mount true
 
-service sys-mount /sbin/sys-mount.sh
+service sys-mount /sbin/mount_system_root
     user root
     group root
     disabled
