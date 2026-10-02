@@ -156,7 +156,7 @@ TW_MAX_BRIGHTNESS := 200
 TW_DEFAULT_BRIGHTNESS := 100
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_NO_REBOOT_BOOTLOADER := true
-
+TW_NO_CPU_TEMP := true
 TW_EXTRA_LANGUAGES := false
 TW_DEFAULT_LANGUAGE := ja
 
