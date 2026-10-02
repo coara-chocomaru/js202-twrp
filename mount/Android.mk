@@ -18,6 +18,7 @@ LOCAL_STATIC_LIBRARIES := \
 
 LOCAL_CFLAGS := \
     -Os \
+    -fPIE \
     -ffunction-sections \
     -fdata-sections \
     -fno-stack-protector \
@@ -25,7 +26,11 @@ LOCAL_CFLAGS := \
     -fno-asynchronous-unwind-tables
 
 LOCAL_LDFLAGS := \
+    -fPIE \
+    -pie \
     -Wl,--gc-sections
+
+LOCAL_PACK_MODULE_RELOCATIONS := false
 
 LOCAL_STRIP_MODULE := true
 
