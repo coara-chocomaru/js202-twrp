@@ -6,7 +6,6 @@
 /data ext4 /dev/block/bootdevice/by-name/userdata flags=backup=1;fileencryption=ice:aes-256-cts;wipeingui;wipeduringfactoryreset;display="Data"
 /sysprop ext4 /dev/block/bootdevice/by-name/sysprop flags=backup=1;display="SysProp"
 /dsp_image emmc /dev/block/bootdevice/by-name/dsp flags=backup=1;flashimg=1;display="DSP Image"
-/sdcard1 vfat /dev/block/mmcblk1p1 /dev/block/mmcblk1 flags=storage;removable;wipeingui;display="MicroSD"
 /sbl1 emmc /dev/block/bootdevice/by-name/sbl1 flags=backup=1;flashimg=1;display="SBL1"
 /sbl1bak emmc /dev/block/bootdevice/by-name/sbl1bak flags=backup=1;flashimg=1;display="SBL1 Backup"
 /rpm emmc /dev/block/bootdevice/by-name/rpm flags=backup=1;flashimg=1;display="RPM"
