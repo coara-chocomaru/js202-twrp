@@ -137,3 +137,15 @@ on property:vendor.sys.listeners.registered=true
     start gatekeeper-1-0
     start servicemanager
     setprop sys.mount true
+
+service sys-mount /sbin/sysmount
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+on property:sys.mount=true
+   start sys-mount
+   setprop sys.mount false
+
+
