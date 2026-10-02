@@ -5,7 +5,8 @@ TARGET_IS_TABLET := true
 LOCAL_PATH := device/kyocera/js202
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb
+    persist.sys.usb.config=mtp,adb \
+    ro.vendor.build.security_patch=2021-10-01
 
 
 PRODUCT_PACKAGES += \
