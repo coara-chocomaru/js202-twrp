@@ -136,17 +136,6 @@ on property:vendor.sys.listeners.registered=true
     start keymaster-4-0
     start gatekeeper-1-0
     start servicemanager
-    setprop sys.mount true
 
-service sys-mount /sbin/mount_system_root
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-on property:sys.mount=true
-   start sys-mount
-   setprop sys.mount false
-
-on property:sys.mount=false
-   stop sys-mount
+on property:init.svc.servicemanager=restarting
+   exec -- /sbin/mount_system_root
