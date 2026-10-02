@@ -30,6 +30,3 @@ LOCAL_LDFLAGS := \
 LOCAL_STRIP_MODULE := true
 
 include $(BUILD_EXECUTABLE)
-
-PRODUCT_PACKAGES += \
-    mount_system_root
