@@ -1,6 +1,3 @@
-BOARD_ROOT_EXTRA_FOLDERS += \
-    mnt/vendor/pstore
-
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_QCOM_HARDWARE := true
 
