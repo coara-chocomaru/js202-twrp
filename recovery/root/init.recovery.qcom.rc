@@ -27,6 +27,9 @@
 import /init.recovery.qcom_decrypt.fbe.rc
 
 on init
+    mkdir /mnt/vendor/persist/data 0777 system system
+    mkdir /mnt/vendor/persist/rfs 0770 root system
+    chmod 0770 /mnt/vendor/persist/rfs
     write /sys/class/backlight/panel0-backlight/brightness 200
     symlink /sbin/libcryptfs_hw.so /vendor/lib64/libcryptfs_hw.so
 
