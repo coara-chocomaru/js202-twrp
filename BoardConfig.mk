@@ -151,8 +151,7 @@ RECOVERY_TOUCHSCREEN_FLIP_Y := true
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 128
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone0/temp"
+TW_NO_REBOOT_BOOTLOADER := true
 
 TW_EXTRA_LANGUAGES := false
 TW_DEFAULT_LANGUAGE := ja
