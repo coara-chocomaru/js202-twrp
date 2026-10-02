@@ -66,4 +66,5 @@
 /reserve4 emmc /dev/block/bootdevice/by-name/reserve4 flags=backup=1;flashimg=1;display="Reserve4"
 /mdtp emmc /dev/block/bootdevice/by-name/mdtp flags=backup=1;flashimg=1;display="MDTP"
 /splash emmc /dev/block/bootdevice/by-name/splash flags=backup=1;flashimg=1;display="Splash"
-/external_sd vfat /dev/block/mmcblk1p1  vfat flags=display="MicroSD",storage;removable
+auto vfat  /devices/platform/soc/11201000.usb* flags=display=usbotg
+/external_sd auto /dev/block/mmcblk1p1 flags=MicroSD;removable
