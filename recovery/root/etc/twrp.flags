@@ -67,4 +67,4 @@
 /mdtp emmc /dev/block/bootdevice/by-name/mdtp flags=backup=1;flashimg=1;display="MDTP"
 /splash emmc /dev/block/bootdevice/by-name/splash flags=backup=1;flashimg=1;display="Splash"
 auto vfat  /devices/platform/soc/78db000.usb/msm_hsusb_host* flags=display=usbotg
-/external_sd auto /dev/block/mmcblk1p1 flags=MicroSD;removable
+/external_sd auto /dev/block/mmcblk1p1 flags=storage;removable;wipeingui;display="MicroSD"
