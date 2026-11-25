@@ -12,7 +12,6 @@ PRODUCT_PACKAGES += \
     qcom_decrypt_fbe \
     mount_system_root
 
-ENABLE_VIRTUAL_AB := true
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/ \
