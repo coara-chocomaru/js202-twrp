@@ -10,7 +10,7 @@ env:
   DEVICE_TREE_URL: 'https://github.com/coara-chocomaru/js202-twrp'
   DEVICE_TREE_BRANCH: '302'
   DEVICE_PATH: 'device/kyocera/kc302'
-  DEVICE_NAME: 'KC-T302DT'
+  DEVICE_NAME: 'kc302'
   MAKEFILE_NAME: 'omni_kc302'
   BUILD_TARGET: 'boot'
   # COMMON_TREE_URLとCOMMON_PATHを必要に応じて指定してください
