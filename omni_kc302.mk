@@ -16,7 +16,7 @@ $(call inherit-product, vendor/omni/config/common.mk)
 # Inherit from a05bd device
 $(call inherit-product, device/kyocera/kc302/device.mk)
 
-PRODUCT_DEVICE := KC-T302DT
+PRODUCT_DEVICE := kc302
 PRODUCT_NAME := omni_kc302
 PRODUCT_BRAND := KYOCERA
 PRODUCT_MODEL := KC-T302DT
