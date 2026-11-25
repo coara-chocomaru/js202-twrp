@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_js202.mk
+    $(LOCAL_DIR)/omni_kc302dt.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_js202-user \
-    omni_js202-userdebug \
-    omni_js202-eng
+    omni_kc302dt-user \
+    omni_kc302dt-userdebug \
+    omni_kc302dt-eng
