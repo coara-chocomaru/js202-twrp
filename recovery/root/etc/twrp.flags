@@ -1,8 +1,8 @@
-/system_root ext4 /dev/block/twrp-by-name/system flags=slotselect;backup=1;display="System";fsflags=ro
+/system_root ext4 /dev/block/twrp-by-name/system flags=slotselect;backup=1;display="System";fsflags=rw
 /system_image emmc /dev/block/twrp-by-name/system flags=slotselect;backup=1;flashimg=1;display="System Image"
-/vendor ext4 /dev/block/bootdevice/by-name/vendor flags=slotselect;backup=1;display="Vendor";fsflags=ro
+/vendor ext4 /dev/block/bootdevice/by-name/vendor flags=slotselect;backup=1;display="Vendor";fsflags=rw
 /vendor_image emmc /dev/block/bootdevice/by-name/vendor flags=slotselect;backup=1;flashimg=1;display="Vendor Image"
-/product ext4 /dev/block/bootdevice/by-name/product flags=slotselect;backup=1;display="Product";fsflags=ro
+/product ext4 /dev/block/bootdevice/by-name/product flags=slotselect;backup=1;display="Product";fsflags=rw
 /product_image emmc /dev/block/bootdevice/by-name/product flags=slotselect;backup=1;flashimg=1;display="Product Image"
 /data ext4 /dev/block/bootdevice/by-name/userdata flags=backup=1;fileencryption=ice:aes-256-cts;wipeingui;wipeduringfactoryreset;display="Data"
 /sysprop ext4 /dev/block/bootdevice/by-name/sysprop flags=backup=1;display="SysProp"
