@@ -7,6 +7,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),js202)
+ifeq ($(TARGET_DEVICE),kc302dt)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
