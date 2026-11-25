@@ -24,10 +24,17 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_OTA_ASSERT_DEVICE := KC-T302DT,kc-t302dt
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
+    aboot \
     boot \
+    cmnlib64 \
+    cmnlib \
     dtbo \
     product \
+    mdtp \
+    modem \
+    sbl1 \
     system \
+    tz \
     vbmeta \
     vendor
 
