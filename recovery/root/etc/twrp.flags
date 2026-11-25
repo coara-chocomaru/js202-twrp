@@ -7,8 +7,8 @@
 /data ext4 /dev/block/bootdevice/by-name/userdata flags=backup=1;fileencryption=ice:aes-256-cts;wipeingui;wipeduringfactoryreset;display="Data"
 /sysprop ext4 /dev/block/bootdevice/by-name/sysprop flags=backup=1;display="SysProp"
 /dsp_image emmc /dev/block/bootdevice/by-name/dsp flags=slotselect;backup=1;flashimg=1;display="DSP Image"
-/vendor/dsp ext4 /dev/block/bootdevice/by-name/dsp flags=slotselect;display="DSP";fsflags=ro;subpartitionof=/vendor
-/vendor/firmware_mnt vfat /dev/block/bootdevice/by-name/modem flags=slotselect;display="Firmware";fsflags=ro;subpartitionof=/vendor
+/vendor/dsp ext4 /dev/block/bootdevice/by-name/dsp flags=slotselect;display="DSP";fsflags=rw;subpartitionof=/vendor
+/vendor/firmware_mnt vfat /dev/block/bootdevice/by-name/modem flags=slotselect;display="Firmware";fsflags=rw;subpartitionof=/vendor
 /modem_image emmc /dev/block/bootdevice/by-name/modem flags=slotselect;backup=1;flashimg=1;display="Modem Image"
 /sbl1 emmc /dev/block/bootdevice/by-name/sbl1 flags=slotselect;backup=1;flashimg=1;display="SBL1"
 /rpm emmc /dev/block/bootdevice/by-name/rpm flags=slotselect;backup=1;flashimg=1;display="RPM"
